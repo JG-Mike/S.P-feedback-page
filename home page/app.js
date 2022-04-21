@@ -1,4 +1,3 @@
-
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
 const navLogo = document.querySelector('#navbar__logo');
@@ -8,33 +7,18 @@ const mobileMenu = () => {
   menu.classList.toggle('is-active');
   menuLinks.classList.toggle('active');
 };
+
 menu.addEventListener('click', mobileMenu);
 
 // Show active menu when scrolling
 const highlightMenu = () => {
-  const elem = document.querySelector('.highlight');
-  const homeMenu = document.querySelector('#agro_products-page');
-  const aboutMenu = document.querySelector('#fertilizers-page');
-  const servicesMenu = document.querySelector('#seeds-page');
-  const feedbackMenu = document.querySelector('#feedback-page');
+  const elem = document.querySelector('.highlight')
+  const countyMenu = document.querySelector('#county-page')
+  const agroMenu = document.querySelector('#AgroProducts-page')
+  const seedMenu = document.querySelector('#seeds-page')
+  const servicesMenu = document.querySelector('#fertilizers-page')
   let scrollPos = window.scrollY;
-  // console.log(scrollPos);
-
-  // adds 'highlight' class to my menu items
-  if (window.innerWidth > 960 && scrollPos < 600) {
-    homeMenu.classList.add('highlight');
-    aboutMenu.classList.remove('highlight');
-    return;
-  } else if (window.innerWidth > 960 && scrollPos < 1400) {
-    aboutMenu.classList.add('highlight');
-    homeMenu.classList.remove('highlight');
-    servicesMenu.classList.remove('highlight');
-    return;
-  } else if (window.innerWidth > 960 && scrollPos < 2345) {
-    servicesMenu.classList.add('highlight');
-    aboutMenu.classList.remove('highlight');
-    return;
-  }
+  console.log(scrollPos);
 
   if ((elem && window.innerWIdth < 960 && scrollPos < 600) || elem) {
     elem.classList.remove('highlight');
